@@ -1,0 +1,27 @@
+#!/bin/bash
+RANDINT=$(($RANDOM%4)) #Picks a random integer from 1-4
+if [[ $RANDINT == 0 ]]; then
+	echo '============================='
+	echo '-------{心臓を捧げよ!}-------'
+	echo '---{Dedicate your hearts!}---'
+	echo '----{!Shinzō o Sasageyo!}----'
+	echo '============================='
+
+
+elif [[ $RANDINT == 1 ]]; then
+	echo '@=================================@'
+	echo '!------{STAY GOLDEN PONYBOY}------!'
+	echo '@=================================@'
+
+
+elif [[ $RANDINT == 2 ]]; then
+	echo ' #***************************************# '
+	echo '===Who gave you permission to launch me?==='
+	echo ' #***************************************# '
+
+
+else
+	echo '|=====__-__=====|'
+	echo '|DanceDanceRate4|'
+	echo '[===============]'
+fi
