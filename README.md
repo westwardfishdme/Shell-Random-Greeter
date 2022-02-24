@@ -16,7 +16,7 @@ A simple bash script that will generate a random ASCII art -OR- Quote when ran.
 
 --------------------------------------------------------------------------------
 
-# Installing to $SHELL
+# Installing to $SHELL (MANUAL ONLY!)
 
 Installing to BASH (**B**orn **A**gain **SH**ell)
 
