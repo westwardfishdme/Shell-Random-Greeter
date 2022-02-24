@@ -1,4 +1,4 @@
-# Random-Greet-Bash-Script
+# Shell Random Greeter
 A simple bash script that will generate a random ASCII art -OR- Quote when ran. 
 
 # Installation
