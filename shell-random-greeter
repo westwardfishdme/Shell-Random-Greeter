@@ -59,13 +59,14 @@ elif [[ $RANDINT == 4 ]]; then #Forest Gump
 	echo ' #***********************************# '
 	echo '== Life is like a box of Chocalates. =='
 	echo ' #***********************************# '
-
+	echo ' -Forest Gump' 
 elif [[ $RANDINT == 5 ]]; then #Mishima
 	echo ' #******************************************# '
 	echo '=== The instant that the blade tore open ====='
 	echo '=== his flesh, the bright disk of the sun ====' 
 	echo '== soared up and exploded behind his eyelids.='
 	echo ' #******************************************# '
+	echo ' - Runaway Horses, Yukio Mishima' 
 elif [[ $RANDINT == 6 ]]; then #HACKING THE PENTAGON
 	echo '+++HACKING THE PENTAGON+++'
 	echo 'Progress: [#####################]'
