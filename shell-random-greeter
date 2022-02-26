@@ -37,12 +37,12 @@ if [[ $RANDINT == 0 ]]; then #AOT
 	echo '---{Dedicate your hearts!}---'
 	echo '----{!Shinzō o Sasageyo!}----'
 	echo '============================='
-
+	echo 'From -Attack On Titan (進撃の巨人)'
 elif [[ $RANDINT == 1 ]]; then #Outsiders 
 	echo '@=================================@'
 	echo '!------{STAY GOLDEN PONYBOY}------!'
 	echo '@=================================@'
-
+	echo '-Dallas, The Outsiders'
 elif [[ $RANDINT == 2 ]]; then #Who gave you perms????
 	echo ' #***************************************# '
 	echo '===Who gave you permission to launch me?==='
