@@ -1,5 +1,20 @@
 # Shell Random Greeter
-A simple bash script that will generate a random ASCII art -OR- Quote when ran. 
+A simple bash script that will generate a random ASCII art -OR- Quote when ran. Looks like this:
+
+`
+Welcome! $USER
+Your Current Directory is: $PWD
+Time of Terminal Start: (HH:MM:SS)
+Your default Shell is: ($SHELL)
+____________________________________
+
+ASCII ART/QUOTE
+
+____________________________________
+
+user@host $
+`
+
 
 # Installation
 **HEY! IF YOU'RE INSTALLING FROM SCRIPT: MAKE SURE BOTH FILES ARE IN THE SAME DIRECTORY!**
