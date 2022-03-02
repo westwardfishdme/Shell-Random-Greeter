@@ -8,7 +8,7 @@ ART SOURCES: https://www.asciiart.eu/
 '
 #VARIABLES
 
-ELIFCT=$(grep -c 'elif' shell-random-greeter ) #counts the #of Else-If statements in file (ADDED FOR EASIER CUSTOMIZATION)
+ELIFCT=$(grep -c 'elif' /usr/bin/shell-random-greeter ) #counts the #of Else-If statements in file (ADDED FOR EASIER CUSTOMIZATION)
 RANGE=$((ELIFCT - 1))
 RANDINT=$(($RANDOM% $RANGE )) 
 CURRENT_TIME=$( date '+%H:%M:%S') 
