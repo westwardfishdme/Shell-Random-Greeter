@@ -16,6 +16,15 @@ function config() { #Adds script to shell config
 	elif [[ "$SHELL" =~ "zsh" ]]; then #if using zsh
 		echo "Installing to ~/.zshrc"
 		echo -e "\nshell-random-greeter" >> ~/.zshrc
+	elif [[ "$SHELL" =~ "fish" ]]; then #if using fish
+		echo "Installing to ~/.config/fish/config.fish"
+		echo -e "\nshell-random-greeter" >> ~/.config/fish/config.fish
+	elif [[ "$SHELL" =~ "ksh" ]]; then #if using KSH
+		echo "Installing to ~/.kshrc"
+		echo -e "\nshell-random-greeter" >> ~/.kshrc
+	elif [[ "$SHELL" =~ "tsh"]]; then #if using TCSH
+		echo "Installing to ~/.tcshrc"
+		echo -e "\nshell-random-greeter" >> ~/.tcshrc
 	else
 		echo "Couldn't detect shell.  Please add to shell config manually."
 	fi
