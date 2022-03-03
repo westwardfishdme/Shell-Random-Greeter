@@ -22,7 +22,7 @@ function config() { #Adds script to shell config
 	elif [[ "$SHELL" =~ "ksh" ]]; then #if using KSH
 		echo "Installing to ~/.kshrc"
 		echo -e "\nshell-random-greeter" >> ~/.kshrc
-	elif [[ "$SHELL" =~ "tsh"]]; then #if using TCSH
+	elif [[ "$SHELL" =~ "tcsh"]]; then #if using TCSH
 		echo "Installing to ~/.tcshrc"
 		echo -e "\nshell-random-greeter" >> ~/.tcshrc
 	else
