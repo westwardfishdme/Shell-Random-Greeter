@@ -9,6 +9,8 @@ function moving() { #Moves the script into /usr/bin
 	$(sudo cp shell-random-greeter /usr/bin)
 }
 
+#Shell Config file checkers
+
 function detect_tcshrc() { #detect .tcshrc file
         if [[ -f ~/.tcshrc ]]; then
                 echo ".tcshrc found!"   
@@ -29,22 +31,103 @@ function detect_tcshrc() { #detect .tcshrc file
                 echo Done.
         fi
 }
+function detect_zshrc() { #detect .zshrc file
+        if [[ -f ~/.zshrc ]]; then
+                echo ".zshrc found!"   
+                COUNT=$(grep -c shell-random-greeter ~/.zshrc) #Check to see if shell-random-greeter is installed...
+
+                if [[ (($COUNT -lt 1)) ]]; then
+                        echo -e "appending 'shell-random-greeter' to .zshrc"
+                        echo -e "\nshell-random-greeter" >> ~/.zshrc
+                else
+                        echo "Shell Random Greeter is already installed in .zshrc!"
+                fi
+        else      
+                echo ".zshrc file not found, making file..."
+                touch ~/.zshrc
+                echo "Done."
+                echo "appending 'shell-random-greeter' to file..."
+                echo -e "\nshell-random-greeter" >> ~/.zshrc
+                echo Done.
+        fi
+}
+function detect_bashrc() { #detect .bashrc file
+        if [[ -f ~/.bashrc ]]; then
+                echo ".bashrc found!"   
+                COUNT=$(grep -c shell-random-greeter ~/.bashrc) #Check to see if shell-random-greeter is installed...
+
+                if [[ (($COUNT -lt 1)) ]]; then
+                        echo -e "appending 'shell-random-greeter' to .bashrc"
+                        echo -e "\nshell-random-greeter" >> ~/.bashrc
+                else
+                        echo "Shell Random Greeter is already installed in .bashrc!"
+                fi
+        else      
+                echo ".bashrc file not found, making file..."
+                touch ~/.bashrc
+                echo "Done."
+                echo "appending 'shell-random-greeter' to file..."
+                echo -e "\nshell-random-greeter" >> ~/.bashrc
+                echo Done.
+        fi
+}
+function detect_kshrc() { #detect .kshrc file
+        if [[ -f ~/.kshrc ]]; then
+                echo ".kshrc found!"   
+                COUNT=$(grep -c shell-random-greeter ~/.kshrc) #Check to see if shell-random-greeter is installed...
+
+                if [[ (($COUNT -lt 1)) ]]; then
+                        echo -e "appending 'shell-random-greeter' to .kshrc"
+                        echo -e "\nshell-random-greeter" >> ~/.kshrc
+                else
+                        echo "Shell Random Greeter is already installed in .kshrc!"
+                fi
+        else      
+                echo ".tcshrc file not found, making file..."
+                touch ~/.kshrc
+                echo "Done."
+                echo "appending 'shell-random-greeter' to file..."
+                echo -e "\nshell-random-greeter" >> ~/.kshrc
+                echo Done.
+        fi
+}
+function detect_fish-config() { #detect .fish file
+        if [[ -f ~/.config/fish/config.fish ]]; then
+                echo ".tcshrc found!"   
+                COUNT=$(grep -c shell-random-greeter ~/.config/fish/config.fish) #Check to see if shell-random-greeter is installed...
+
+                if [[ (($COUNT -lt 1)) ]]; then
+                        echo "appending 'shell-random-greeter' to ~/.config/fish/config.fish"
+                        echo -e "\nshell-random-greeter" >> ~/.config/fish/config.fish
+                else
+                        echo "Shell Random Greeter is already installed in config.fish!"
+                fi
+        else      
+                echo "config.fish file not found, making file..."
+                touch ~/.config/fish/config.fish
+                echo "Done."
+                echo "appending 'shell-random-greeter' to file..."
+                echo -e "\nshell-random-greeter" >> ~/.config/fish/config.fish
+                echo Done.
+        fi
+}
 
 function config() { #Adds script to shell config
 	if [[ "$SHELL" =~ "bash" ]]; then #if using bash
-		echo "Installing to ~/.bashrc"
-		echo -e "\nshell-random-greeter" >> ~/.bashrc
+		echo "installing to ~/.bashrc"
+		detect_bashrc
 		source ~/.bashrc
 	elif [[ "$SHELL" =~ "zsh" ]]; then #if using zsh
-		echo "Installing to ~/.zshrc"
-		echo -e "\nshell-random-greeter" >> ~/.zshrc
+		echo "installing to ~/.zshrc"
+		detect_zshrc
 	elif [[ "$SHELL" =~ "fish" ]]; then #if using fish
-		echo "Installing to ~/.config/fish/config.fish"
-		echo -e "\nshell-random-greeter" >> ~/.config/fish/config.fish #IF YOU ARE USING FISH-- YOU MAY FIX THE LOCATION OF THE COMMAND OR INSTALL MANUALLY
+		echo "installing to ~/.config/fish/config.fish"
+		detect_fish-config	
 	elif [[ "$SHELL" =~ "ksh" ]]; then #if using KSH
 		echo "Installing to ~/.kshrc"
-		echo -e "\nshell-random-greeter" >> ~/.kshrc
-	elif [[ "$SHELL" =~ "tcsh"]]; then #if using TCSH
+		detect_kshrc
+	elif [[ "$SHELL" =~ "tcsh" ]]; then #if using TCSH
+		echo "Installing to ~/.tcshrc"
 		detect_tcshrc
 	else
 		echo "Couldn't detect shell.  Please add to shell config manually."
