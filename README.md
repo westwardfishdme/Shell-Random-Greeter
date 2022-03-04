@@ -19,7 +19,10 @@ user@host $
 # Installation
 **HEY! IF YOU'RE INSTALLING FROM SCRIPT: MAKE SURE BOTH FILES ARE IN THE SAME DIRECTORY!**
 
-## Install from Install Script (Tested on Arch Systems):
+### Shells supported for automatic installer:
+FISH, BASH, ZSH, TCSH, and KSH
+
+## Install from Install Script (Tested on Arch Linux):
 1. In a terminal, type `$ chmod +x install.sh`
 2. In the same terminal, type: `$ ./install` and run through Installation Process.
 3. Run `$ shell-random-greeter` or `$ ls /usr/bin | grep shell-random-greeter` to test if the command copied to the right directory
@@ -32,13 +35,17 @@ user@host $
 --------------------------------------------------------------------------------
 
 # Installing to $SHELL (MANUAL ONLY!)
+Installing to any shell:
+1. Edit your config file, looks like `.*rc` or check your shell's documentation.
+2. Add `shell-random-greeter` in it's own line
+3. Source it with `$ source path/to/config` and enjoy!
 
+-----------------------------------------
 Installing to BASH (**B**orn **A**gain **SH**ell)
 
 1. Edit your `.bashrc` file with your favorite text editor
 2. At the bottom of the file (or wherever you want so long as it doesn't interfere with the other functions) type: `shell-random-greeter` then write and exit the file.
 3. type ` $ source ~/.bashrc` and voila! Installation is complete
-4. 
 -----------------------------------------
 
 Installing to ZSH (**Z SH**ell)
