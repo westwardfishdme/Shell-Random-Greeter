@@ -9,7 +9,7 @@ ART SOURCES: https://www.asciiart.eu/
 #VARIABLES
 
 ELIFCT=$(grep -c 'elif' /usr/bin/shell-random-greeter ) #counts the #of Else-If statements in file (ADDED FOR EASIER CUSTOMIZATION)
-RANGE=$((ELIFCT - 1))
+RANGE=$((ELIFCT - 3))
 RANDINT=$(($RANDOM% $RANGE )) 
 CURRENT_TIME=$( date '+%H:%M:%S') 
 ##############################################################################################################
@@ -20,8 +20,14 @@ function welcome() { #Welcome script
 	echo "Time of Terminal Start: " $CURRENT_TIME
 		if [[ $SHELL =~ zsh ]]; then #If the shell is ZSH
 			echo 'Your default shell is: ZSH'
-		elif [[ $SHELL =~ bash ]]; then #If the shell is BASH
+		elif [[ $SHELL =~ bash ]]; then #If the shell is BASH 
 			echo 'Your default shell is: BASH'
+		elif [[ $SHELL =~ fish ]]; then #If the shell is FISH -1
+			echo 'Your default shell is: FISH'
+		elif [[ $SHELL =~ ksh ]]; then #If the shell is KSH -2
+			echo 'Your default shell is: KSH'
+		elif [[ $SHELL =~ tcsh ]]; then #If the shell is TCSH -3
+			echo 'Your default shell is: TCSH'
 		else #IF shell is unknown
 			echo "!!! Can't detect your shell. Printing Shell dir: " $SHELL 
 		fi
