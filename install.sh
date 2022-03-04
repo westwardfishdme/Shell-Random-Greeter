@@ -8,6 +8,28 @@ function making() { #Makes the script executable
 function moving() { #Moves the script into /usr/bin
 	$(sudo cp shell-random-greeter /usr/bin)
 }
+
+function detect_tcshrc() { #detect .tcshrc file
+        if [[ -f ~/.tcshrc ]]; then
+                echo ".tcshrc found!"   
+                COUNT=$(grep -c shell-random-greeter ~/.tcshrc) #Check to see if shell-random-greeter is installed...
+
+                if [[ (($COUNT -lt 1)) ]]; then
+                        echo -e "appending 'shell-random-greeter' to .tcshrc"
+                        echo -e "\nshell-random-greeter" >> ~/.tcshrc
+                else
+                        echo "Shell Random Greeter is already installed in .tcshrc!"
+                fi
+        else      
+                echo ".tcshrc file not found, making file..."
+                touch ~/.tcshrc
+                echo "Done."
+                echo "appending 'shell-random-greeter' to file..."
+                echo -e "\nshell-random-greeter" >> ~/.tcshrc
+                echo Done.
+        fi
+}
+
 function config() { #Adds script to shell config
 	if [[ "$SHELL" =~ "bash" ]]; then #if using bash
 		echo "Installing to ~/.bashrc"
@@ -18,13 +40,12 @@ function config() { #Adds script to shell config
 		echo -e "\nshell-random-greeter" >> ~/.zshrc
 	elif [[ "$SHELL" =~ "fish" ]]; then #if using fish
 		echo "Installing to ~/.config/fish/config.fish"
-		echo -e "\nshell-random-greeter" >> ~/.config/fish/config.fish
+		echo -e "\nshell-random-greeter" >> ~/.config/fish/config.fish #IF YOU ARE USING FISH-- YOU MAY FIX THE LOCATION OF THE COMMAND OR INSTALL MANUALLY
 	elif [[ "$SHELL" =~ "ksh" ]]; then #if using KSH
 		echo "Installing to ~/.kshrc"
 		echo -e "\nshell-random-greeter" >> ~/.kshrc
 	elif [[ "$SHELL" =~ "tcsh"]]; then #if using TCSH
-		echo "Installing to ~/.tcshrc"
-		echo -e "\nshell-random-greeter" >> ~/.tcshrc
+		detect_tcshrc
 	else
 		echo "Couldn't detect shell.  Please add to shell config manually."
 	fi
