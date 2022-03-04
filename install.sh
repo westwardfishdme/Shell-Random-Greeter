@@ -83,7 +83,7 @@ function detect_kshrc() { #detect .kshrc file
                         echo "Shell Random Greeter is already installed in .kshrc!"
                 fi
         else      
-                echo ".tcshrc file not found, making file..."
+                echo ".kshrc file not found, making file..."
                 touch ~/.kshrc
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
@@ -93,7 +93,7 @@ function detect_kshrc() { #detect .kshrc file
 }
 function detect_fish-config() { #detect .fish file
         if [[ -f ~/.config/fish/config.fish ]]; then
-                echo ".tcshrc found!"   
+                echo ".~/.config/fish/config.fish found!"   
                 COUNT=$(grep -c shell-random-greeter ~/.config/fish/config.fish) #Check to see if shell-random-greeter is installed...
 
                 if [[ (($COUNT -lt 1)) ]]; then
@@ -103,7 +103,7 @@ function detect_fish-config() { #detect .fish file
                         echo "Shell Random Greeter is already installed in config.fish!"
                 fi
         else      
-                echo "config.fish file not found, making file..."
+                echo "~/.config/fish/config.fish file not found, making file..."
                 touch ~/.config/fish/config.fish
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
