@@ -1,13 +1,19 @@
 #!/bin/bash
 echo "Starting Install..."
 echo "Making Script an executable..."
+
+
+#Main Functions
+
 function making() { #Makes the script executable
-	$(cd $PWD)
-	$(chmod +x shell-random-greeter)
+	
+	$(chmod +x $PWD/shell-random-greeter)
 }
+
 function moving() { #Moves the script into /usr/bin
-	$(sudo cp shell-random-greeter /usr/bin)
+	$(sudo cp $PWD/shell-random-greeter /usr/bin)
 }
+#########################################################
 
 #Shell Config file checkers
 
@@ -17,7 +23,7 @@ function detect_tcshrc() { #detect .tcshrc file
                 COUNT=$(grep -c shell-random-greeter ~/.tcshrc) #Check to see if shell-random-greeter is installed...
 
                 if [[ (($COUNT -lt 1)) ]]; then
-                        echo -e "appending 'shell-random-greeter' to .tcshrc"
+                        echo  "appending 'shell-random-greeter' to .tcshrc"
                         echo -e "\nshell-random-greeter" >> ~/.tcshrc
                 else
                         echo "Shell Random Greeter is already installed in .tcshrc!"
@@ -31,33 +37,47 @@ function detect_tcshrc() { #detect .tcshrc file
                 echo Done.
         fi
 }
+
 function detect_zshrc() { #detect .zshrc file
         if [[ -f ~/.zshrc ]]; then
                 echo ".zshrc found!"   
-                COUNT=$(grep -c shell-random-greeter ~/.zshrc) #Check to see if shell-random-greeter is installed...
+		if [[ -f ~/.p10k.zsh ]]; then #Detects if user has Power Level 10K
+			echo ".p10k.zsh detected!"
+			COUNT=$(grep -c shell-random-greeter ~/.p10k.zsh)
+			if [[ (($COUNT -lt 1))  ]]; then 
+				echo "appending 'shell-random-greeter' to .p10k.zsh"
+				echo -e "\nshell-random-greeter" >> ~/.p10k.zsh
+			else 
+				echo "Shell Random Greeter is already installed in .p10k.zsh!"
+			fi
+		else
+			COUNT=$(grep -c shell-random-greeter ~/.zshrc) #Check to see if shell-random-greeter is installed...
 
-                if [[ (($COUNT -lt 1)) ]]; then
-                        echo -e "appending 'shell-random-greeter' to .zshrc"
-                        echo -e "\nshell-random-greeter" >> ~/.zshrc
-                else
-                        echo "Shell Random Greeter is already installed in .zshrc!"
-                fi
-        else      
-                echo ".zshrc file not found, making file..."
-                touch ~/.zshrc
-                echo "Done."
-                echo "appending 'shell-random-greeter' to file..."
-                echo -e "\nshell-random-greeter" >> ~/.zshrc
-                echo Done.
-        fi
+			if [[ (($COUNT -lt 1)) ]]; then
+				echo "appending 'shell-random-greeter' to .zshrc"
+				echo -e "\nshell-random-greeter" >> ~/.zshrc
+			else
+				echo "Shell Random Greeter is already installed in .zshrc!"
+			fi
+		fi
+
+	else      
+		echo ".zshrc file not found, making file..."
+		touch ~/.zshrc
+		echo "Done."
+		echo "appending 'shell-random-greeter' to file..."
+		echo -e "\nshell-random-greeter" >> ~/.zshrc
+		echo Done.
+	fi
 }
+
 function detect_bashrc() { #detect .bashrc file
         if [[ -f ~/.bashrc ]]; then
                 echo ".bashrc found!"   
                 COUNT=$(grep -c shell-random-greeter ~/.bashrc) #Check to see if shell-random-greeter is installed...
 
                 if [[ (($COUNT -lt 1)) ]]; then
-                        echo -e "appending 'shell-random-greeter' to .bashrc"
+                        echo "appending 'shell-random-greeter' to .bashrc"
                         echo -e "\nshell-random-greeter" >> ~/.bashrc
                 else
                         echo "Shell Random Greeter is already installed in .bashrc!"
@@ -77,7 +97,7 @@ function detect_kshrc() { #detect .kshrc file
                 COUNT=$(grep -c shell-random-greeter ~/.kshrc) #Check to see if shell-random-greeter is installed...
 
                 if [[ (($COUNT -lt 1)) ]]; then
-                        echo -e "appending 'shell-random-greeter' to .kshrc"
+                        echo "appending 'shell-random-greeter' to .kshrc"
                         echo -e "\nshell-random-greeter" >> ~/.kshrc
                 else
                         echo "Shell Random Greeter is already installed in .kshrc!"
@@ -132,15 +152,17 @@ function config() { #Adds script to shell config
 	else
 		echo "Couldn't detect shell.  Please add to shell config manually."
 	fi
-} 
+}
+
+#INSTALL BEGINS
 making 
+
 if making; then #If making() is successful:
 	echo "Success."
 	echo "Moving File to /usr/bin"
 	moving
 	if moving; then #if moving() is successful:
 		echo "Success!"
-		echo "enter 'shell-random-greeter' into your CLI to make sure it works!"
 		config
 	else #if moving() is unsuccessful
 		echo "ERROR: File was not copied to /usr/bin"
