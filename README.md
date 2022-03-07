@@ -43,7 +43,9 @@ Installing to any shell:
 # UPDATING SHELL-RANDOM-GREETER
 
 After making any edits to `shell-random-greeter`, you can either run 
-`$ ./install` or `$ sudo cp shell-random-greeter /usr/bin`
+`$ ./install`
+-or- 
+`$ sudo cp shell-random-greeter /usr/bin`
 and the script should regenerate on the next launch :)
 
 --------------------------------------------------------------------------------
