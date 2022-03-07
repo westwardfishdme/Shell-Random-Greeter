@@ -15,7 +15,7 @@ CURRENT_TIME=$( date '+%H:%M:%S')
 ##############################################################################################################
 
 function welcome() { #Welcome script 
-	echo 'Welcome!' $USER
+	echo 'Welcome!' $USER'@'$HOSTNAME
 	echo "Your Current Directory is: " $PWD
 	echo "Time of Terminal Start: " $CURRENT_TIME
 		if [[ $SHELL =~ zsh ]]; then #If the shell is ZSH
