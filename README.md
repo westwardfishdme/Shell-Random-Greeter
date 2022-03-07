@@ -2,7 +2,7 @@
 A simple bash script that will generate a random ASCII art -OR- Quote when ran. Looks like this:
 
 ```
-Welcome! $USER
+Welcome! USER@HOST
 Your Current Directory is: $PWD
 Time of Terminal Start: (HH:MM:SS)
 Your default Shell is: ($SHELL)
