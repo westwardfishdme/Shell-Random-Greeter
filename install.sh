@@ -34,7 +34,7 @@ function detect_tcshrc() { #detect .tcshrc file
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
                 echo -e "\nshell-random-greeter" >> ~/.tcshrc
-                echo Done.
+                echo "Done."
         fi
 }
 
@@ -67,7 +67,7 @@ function detect_zshrc() { #detect .zshrc file
 		echo "Done."
 		echo "appending 'shell-random-greeter' to file..."
 		echo -e "\nshell-random-greeter" >> ~/.zshrc
-		echo Done.
+		echo "Done."
 	fi
 }
 
@@ -88,7 +88,7 @@ function detect_bashrc() { #detect .bashrc file
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
                 echo -e "\nshell-random-greeter" >> ~/.bashrc
-                echo Done.
+                echo "Done."
         fi
 }
 function detect_kshrc() { #detect .kshrc file
@@ -108,7 +108,7 @@ function detect_kshrc() { #detect .kshrc file
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
                 echo -e "\nshell-random-greeter" >> ~/.kshrc
-                echo Done.
+                echo "Done."
         fi
 }
 function detect_fish-config() { #detect .fish file
@@ -128,7 +128,7 @@ function detect_fish-config() { #detect .fish file
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
                 echo -e "\nshell-random-greeter" >> ~/.config/fish/config.fish
-                echo Done.
+                echo "Done."
         fi
 }
 
