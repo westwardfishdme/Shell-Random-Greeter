@@ -36,29 +36,17 @@ FISH, BASH, ZSH, TCSH, and KSH
 
 # Installing to $SHELL (MANUAL ONLY!)
 Installing to any shell:
-1. Edit your config file, looks like `.*rc` or check your shell's documentation.
+1. Edit your config file, (looks like `.*rc` or check your shell's documentation for this)
 2. Add `shell-random-greeter` in it's own line
 3. Source it with `$ source path/to/config` and enjoy!
+------------------------------------------
+# UPDATING SHELL-RANDOM-GREETER
 
------------------------------------------
-Installing to BASH (**B**orn **A**gain **SH**ell)
+After making any edits to `shell-random-greeter`, you can either run 
+`$ ./install` or `$ sudo cp shell-random-greeter /usr/bin`
+and the script should regenerate on the next launch :)
 
-1. Edit your `.bashrc` file with your favorite text editor
-2. At the bottom of the file (or wherever you want so long as it doesn't interfere with the other functions) type: `shell-random-greeter` then write and exit the file.
-3. type ` $ source ~/.bashrc` and voila! Installation is complete
------------------------------------------
-
-Installing to ZSH (**Z SH**ell)
-
-1. Edit `.zshrc` with your favorite text editor
-2. At the bottom of the file (or wherever you want so long as it doesn't interfere with the other functions) type: `shell-random-greeter` then write and exit the file.
-3. type ` $ source ~/.zshrc` and voila! Installation is complete
-
-**If you have Powerlevel10k:**
-1. Instead of editing `~/.zshrc`, edit `~/.p10k.zsh` 
-2. When sourcing, still run the command: `$ source ~/.zshrc`
-
--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Enjoy the script!
 
 
