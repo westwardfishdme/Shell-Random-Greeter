@@ -7,11 +7,28 @@ echo "Making Script an executable..."
 
 function making() { #Makes the script executable
 	
-	$(chmod +x $PWD/shell-random-greeter)
+	chmod +x $PWD/shell-random-greeter
 }
 
 function moving() { #Moves the script into /usr/bin
-	$(sudo cp $PWD/shell-random-greeter /usr/bin)
+	
+	# if the file is detected in /usr/bin, ask if overwrite is ok.
+	if [[ -f /usr/bin/shell-random-greeter ]]; then
+		echo -e "// there already is a file named 'shell-random-greeter' detected in /usr/bin \n Do you wish to overwrite this file? [y/N]"
+		read yn
+		if [[ $yn == "y" ]] || [[ $yn == "Y" ]]; then #Overwrite
+			echo "Overwriting 'shell-random-greeter' in /usr/bin"
+			sudo cp --remove-destination $PWD/shell-random-greeter /usr/bin
+		elif [[ $yn == "n" ]] || [[ $yn == "N" ]]; then #Don't overwrite
+			echo -e "Overwrite cancelled. \n Exiting Script..."
+		else 
+			echo "Unknown Input, Exiting Script..."
+		fi
+	else
+		sudo cp $PWD/shell-random-greeter /usr/bin
+		yn="y"
+	fi
+		
 }
 #########################################################
 
@@ -34,7 +51,7 @@ function detect_tcshrc() { #detect .tcshrc file
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
                 echo -e "\nshell-random-greeter" >> ~/.tcshrc
-                echo "Done."
+                echo Done.
         fi
 }
 
@@ -67,7 +84,7 @@ function detect_zshrc() { #detect .zshrc file
 		echo "Done."
 		echo "appending 'shell-random-greeter' to file..."
 		echo -e "\nshell-random-greeter" >> ~/.zshrc
-		echo "Done."
+		echo Done.
 	fi
 }
 
@@ -88,7 +105,7 @@ function detect_bashrc() { #detect .bashrc file
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
                 echo -e "\nshell-random-greeter" >> ~/.bashrc
-                echo "Done."
+                echo Done.
         fi
 }
 function detect_kshrc() { #detect .kshrc file
@@ -108,7 +125,7 @@ function detect_kshrc() { #detect .kshrc file
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
                 echo -e "\nshell-random-greeter" >> ~/.kshrc
-                echo "Done."
+                echo Done.
         fi
 }
 function detect_fish-config() { #detect .fish file
@@ -128,7 +145,7 @@ function detect_fish-config() { #detect .fish file
                 echo "Done."
                 echo "appending 'shell-random-greeter' to file..."
                 echo -e "\nshell-random-greeter" >> ~/.config/fish/config.fish
-                echo "Done."
+                echo Done.
         fi
 }
 
@@ -160,8 +177,8 @@ making
 if making; then #If making() is successful:
 	echo "Success."
 	echo "Moving File to /usr/bin"
-	moving
-	if moving; then #if moving() is successful:
+
+	if  moving && [[ $yn == "y" || $yn == "Y" ]]; then #if moving() is successful:
 		echo "Success!"
 		config
 	else #if moving() is unsuccessful
@@ -169,7 +186,7 @@ if making; then #If making() is successful:
 		echo "Exiting install"
 	fi
 else #if making() is unsuccessful
-	echo "ERROR: Script was not found."
+	echo "ERROR: 'shell-random-greeter' was not found."
 	echo "Exiting install..."
 fi
 
