@@ -10,6 +10,7 @@ Your default Shell is: ($SHELL)
 About System:
 CPU MODEL: 
 Memory Available:
+Kernel:
 ____________________________________
 
 ASCII ART/QUOTE
