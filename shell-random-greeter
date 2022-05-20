@@ -142,10 +142,9 @@ elif [[ $RANDINT == 9 ]]; then
 elif [[ $RANDINT == 10 ]]; then
 	echo "TESTING TESTING? MIC CHECK: OK!"
 elif [[ $RANDINT == 11  ]]; then
-	echo "did you even do your 2 chores?"
-	echo "CHORES: Wash Dishes; Take out trash."
+	echo "goodbye!"
 elif [[ $RANDINT == 12 ]]; then
-	hi.
+	echo "hi."
 elif [[ $RANDINT == 13 ]]; then
 	echo "The way she had my toes curl should be a crime"
 	echo "-Timberlake, Bones"
