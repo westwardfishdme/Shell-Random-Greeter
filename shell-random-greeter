@@ -11,13 +11,14 @@ ART SOURCES: https://www.asciiart.eu/
 ELIFCT=$(grep -c 'elif' /usr/bin/shell-random-greeter ) #counts the #of Else-If statements in file (ADDED FOR EASIER CUSTOMIZATION)
 RANGE=$((ELIFCT - 3))
 RANDINT=$(($RANDOM% $RANGE )) 
-CURRENT_TIME=$( date '+%H:%M:%S') 
+CURRENT_TIME=$( date '+%H:%M:%S')
 ##############################################################################################################
 
 function welcome() { #Welcome script 
-	echo 'Welcome!' $USER
-	echo "Your Current Directory is: " $PWD
-	echo "Time of Terminal Start: " $CURRENT_TIME
+	echo '<Welcome!>' "{"$USER'@'$HOSTNAME"}"
+	echo "Your Current Directory is:" $PWD
+	echo "Kernel Version:" $(uname --kernel-release)
+	echo "Time of Terminal Start:" "["$CURRENT_TIME"]"
 		if [[ $SHELL =~ zsh ]]; then #If the shell is ZSH
 			echo 'Your default shell is: ZSH'
 		elif [[ $SHELL =~ bash ]]; then #If the shell is BASH 
@@ -31,6 +32,10 @@ function welcome() { #Welcome script
 		else #IF shell is unknown
 			echo "!!! Can't detect your shell. Printing Shell dir: " $SHELL 
 		fi
+	echo
+	echo "About system:"
+	echo "CPU" $( lscpu | grep "Model name" )
+	lsmem --summary
 	echo '____________________________________'
 	echo
 }
@@ -137,6 +142,28 @@ elif [[ $RANDINT == 9 ]]; then
 elif [[ $RANDINT == 10 ]]; then
 	echo "TESTING TESTING? MIC CHECK: OK!"
 
+elif [[ $RANDINT == 11 ]]; then 
+	echo "I'll never forget you g."
+	echo "Day 1's 4ever"
+	echo "Mo Chowdhury 2002-2021"
+elif [[ $RANDINT == 12  ]]; then
+	echo "did you even do your 2 chores?"
+	echo "CHORES: Wash Dishes; Take out trash."
+elif [[ $RANDINT == 13 ]]; then
+	echo "Should probably call Mamang or something"
+	echo "you haven't done that have you?"
+elif [[ $RANDINT == 14 ]]; then
+	echo "The way she had my toes curl should be a crime"
+	echo "-Timberlake, Bones"
+elif [[ $RANDINT == 15 ]]; then
+	echo "VIM > NANO"
+elif [[ $RANDINT == 16 ]]; then
+	echo "real sigma males sugma dick."
+elif [[ $RANDINT == 17 ]]; then
+	echo "LONG LIVE KING TERRY."
+	echo "TALK TO GOD AND INSTALL TempleOS today!"
+elif [[ $RANDINT == 18  ]]; then
+	echo "If they Glow in the dark, run'em over!"
 else
 	echo '|=====__-__=====|'
 	echo '|DanceDanceRate4|'
