@@ -15,7 +15,7 @@ CURRENT_TIME=$( date '+%H:%M:%S')
 ##############################################################################################################
 
 function welcome() { #Welcome script 
-	echo '<Welcome!>' "{"$USER'@'$HOSTNAME"}"
+	echo -e "\e[31m<Welcome!> \e[0m" "{"$USER'@'$HOSTNAME"}"
 	echo "Your Current Directory is:" $PWD
 	echo "Kernel Version:" $(uname --kernel-release)
 	echo "Time of Terminal Start:" "["$CURRENT_TIME"]"
@@ -33,7 +33,7 @@ function welcome() { #Welcome script
 			echo "!!! Can't detect your shell. Printing Shell dir: " $SHELL 
 		fi
 	echo
-	echo "About system:"
+	echo -e "\e[94m<About system:>\e[0m"
 	echo "CPU" $( lscpu | grep "Model name" )
 	lsmem --summary
 	echo '____________________________________'
