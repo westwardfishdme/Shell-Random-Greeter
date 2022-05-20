@@ -141,29 +141,19 @@ elif [[ $RANDINT == 9 ]]; then
 
 elif [[ $RANDINT == 10 ]]; then
 	echo "TESTING TESTING? MIC CHECK: OK!"
-
-elif [[ $RANDINT == 11 ]]; then 
-	echo "I'll never forget you g."
-	echo "Day 1's 4ever"
-	echo "Mo Chowdhury 2002-2021"
-elif [[ $RANDINT == 12  ]]; then
+elif [[ $RANDINT == 11  ]]; then
 	echo "did you even do your 2 chores?"
 	echo "CHORES: Wash Dishes; Take out trash."
+elif [[ $RANDINT == 12 ]]; then
+	hi.
 elif [[ $RANDINT == 13 ]]; then
-	echo "Should probably call Mamang or something"
-	echo "you haven't done that have you?"
-elif [[ $RANDINT == 14 ]]; then
 	echo "The way she had my toes curl should be a crime"
 	echo "-Timberlake, Bones"
-elif [[ $RANDINT == 15 ]]; then
+elif [[ $RANDINT == 14 ]]; then
 	echo "VIM > NANO"
-elif [[ $RANDINT == 16 ]]; then
-	echo "real sigma males sugma dick."
-elif [[ $RANDINT == 17 ]]; then
+elif [[ $RANDINT == 15 ]]; then
 	echo "LONG LIVE KING TERRY."
 	echo "TALK TO GOD AND INSTALL TempleOS today!"
-elif [[ $RANDINT == 18  ]]; then
-	echo "If they Glow in the dark, run'em over!"
 else
 	echo '|=====__-__=====|'
 	echo '|DanceDanceRate4|'
