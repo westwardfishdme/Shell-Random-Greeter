@@ -6,6 +6,10 @@ Welcome! USER@HOST
 Your Current Directory is: $PWD
 Time of Terminal Start: (HH:MM:SS)
 Your default Shell is: ($SHELL)
+
+About System:
+CPU MODEL: 
+Memory Available:
 ____________________________________
 
 ASCII ART/QUOTE
