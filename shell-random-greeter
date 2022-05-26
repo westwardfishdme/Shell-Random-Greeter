@@ -18,20 +18,8 @@ function welcome() { #Welcome script
         echo -e '\e[31m<Welcome!>\e[0m' '{'"\e[33m$USER\e[0m"'@'"\e[33m$HOSTNAME\e[0m"'}'
         echo -e "\e[92mYour Current Directory is\e[0m:" "\e[94m$PWD\e[0m"
         echo -e "\e[92mTime of Terminal Start\e[0m:" "["$CURRENT_TIME"]"
-                if [[ $SHELL =~ zsh ]]; then #If the shell is ZSH
-                        echo 'Your default shell is: ZSH'
-                elif [[ $SHELL =~ bash ]]; then #If the shell is BASH
-                        echo 'Your default shell is: BASH'
-                elif [[ $SHELL =~ fish ]]; then #If the shell is FISH -1
-                        echo 'Your default shell is: FISH'
-                elif [[ $SHELL =~ ksh ]]; then #If the shell is KSH -2
-                        echo 'Your default shell is: KSH'
-                elif [[ $SHELL =~ tcsh ]]; then #If the shell is TCSH -3
-                        echo 'Your default shell is: TCSH'
-                else #IF shell is unknown
-                        echo "!!! Can't detect your shell. Printing Shell dir: " $SHELL
-                fi
-        echo '____________________________________'
+	echo -e "\e[92mDefault Shell\e[0m:" $(echo $SHELL | cut -c 10-)
+	echo '____________________________________'
         echo
         echo -e "\e[92m<About system:>\e[0m"
         echo "CPU" $( lscpu | grep "Model name" )
