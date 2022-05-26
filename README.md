@@ -64,6 +64,7 @@ Unix Shells:
 - KSH
 - FISH
 - TCSH
+--------------------------------------------------------------------------------
 Notes:
 - WinBash is sort of buggy, but I'll work it out
 - Should work just fine on MacOS-- Since MAC's utilize the ZSH shell and is a UNIX-like OS, but I haven't tested it yet.
