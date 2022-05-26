@@ -1,6 +1,6 @@
 # Shell Random Greeter
 A simple bash script that will generate a random ASCII art -OR- Quote when ran. Looks like this:
-
+Acts as an alternative to NeoFetch/pFetch 
 ```
 Welcome! USER@HOST
 Your Current Directory is: $PWD
