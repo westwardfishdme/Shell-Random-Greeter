@@ -68,7 +68,7 @@ Unix Shells:
 Notes:
 - WinBash is sort of buggy, but I'll work it out
 - Should work just fine on MacOS-- Since MAC's utilize the ZSH shell and is a UNIX-like OS, but I haven't tested it yet.
-- Same goes for any other Unix-Like System. Any issues sprout up post in the Bug Reports. :P
+- Same goes for any other Unix-Like System. If any issues sprout up, pls post in the Bug Reports. :P
 --------------------------------------------------------------------------------
 Enjoy the script!
 --------------------------------------------------------------------------------
