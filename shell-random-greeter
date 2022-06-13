@@ -1,38 +1,51 @@
 #!/bin/bash
 
-#Credits
+# Credits #
 : '
 ALL ART IS CREDITED TO ORIGINAL ARTIST WHEN APPLICABLE
 
 ART SOURCES: https://www.asciiart.eu/
 '
-#VARIABLES
 
-ELIFCT=$(grep -c 'elif' /usr/bin/shell-random-greeter ) #counts the #of Else-If statements in file (ADDED FOR EASIER CUSTOMIZATION)
-RANGE=$((ELIFCT - 3))
-RANDINT=$(($RANDOM% $RANGE )) 
-CURRENT_TIME=$( date '+%H:%M:%S')
 ##############################################################################################################
 
-function welcome() { #Welcome script
-        echo -e '\e[31m<Welcome!>\e[0m' '{'"\e[33m$USER\e[0m"'@'"\e[33m$HOSTNAME\e[0m"'}'
-        echo -e "\e[92mYour Current Directory is\e[0m:" "\e[94m$PWD\e[0m"
-        echo -e "\e[92mTime of Terminal Start\e[0m:" "["$CURRENT_TIME"]"
-	echo -e "\e[92mDefault Shell\e[0m:" $(echo $SHELL | cut -c 10-)
-	echo '____________________________________'
+# Customizing The Script #
+
+# before the else conditional (but after the the first if statement) add the following line:
+
+
+# elif [[ $RANDINT == value ]]; then
+#       echo "your"
+#       echo "quote"
+#       echo "here"
+
+
+
+# VARIABLES #
+
+RANGE=$(grep -c 'elif' /usr/bin/shell-random-greeter ) #counts the #of Else-If statements in file (number should always be one more than the final value in the elif statements)
+RANDINT=$(($RANDOM% $RANGE )) # picks a random number depending on the amount of elif statements in the file
+CURRENT_TIME=$( date '+%H:%M:%S') # Just the current time for the 'TIME of terminal start-- can be used in the quotes section as well.'
+##############################################################################################################
+
+function welcome() { # Welcome script
+        echo -e '\e[31m<Welcome!>\e[0m' '{'"\e[33m$USER\e[0m"'@'"\e[33m$HOSTNAME\e[0m"'}' # username@host using env
+        echo -e "\e[92mYour Current Directory is\e[0m:" "\e[94m$PWD\e[0m" # Current Directory
+        echo -e "\e[92mTime of Terminal Start\e[0m:" "["$CURRENT_TIME"]" # Time of start
+        echo -e "\e[92mDefault Shell\e[0m:" $(echo $SHELL | cut -c 10-) # Default Shell
+        echo '____________________________________'
         echo
-        echo -e "\e[92m<About system:>\e[0m"
-        echo "CPU" $( lscpu | grep "Model name" )
-        lsmem --summary
-        echo "Kernel:" $(uname --kernel-release)
+        echo -e "\e[92m<About system:>\e[0m" # System info
+        echo "CPU" $( lscpu | grep "Model name" ) # CPU
+        lsmem --summary # Memory info
+        echo "Kernel:" $(uname --kernel-release) # Kernel info
         echo '____________________________________'
         echo
 }
-
-
 welcome
 
-#ART and Quotes
+# ART and Quotes #
+
 if [[ $RANDINT == 0 ]]; then #AOT
 	echo '============================='
 	echo '-------{心臓を捧げよ!}-------'
@@ -149,16 +162,15 @@ else
 	echo '[===============]'
 fi
 
-#END OF ART
+# END OF ART #
 
 echo '____________________________________'
 echo 
 
-#DEBUG MENU (uncomment to use)
+# DEBUG MENU (uncomment to use)
 : '
 echo "DEBUG MENU:"
 echo "========================"
 echo "RANGE: " $RANGE
 echo "RANDINT:" $RANDINT
-echo "ELIFct:" $ELIFCT
 '
