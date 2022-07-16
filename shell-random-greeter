@@ -33,139 +33,140 @@ function welcome() { # Welcome script
         echo -e "\e[92mYour Current Directory is\e[0m:" "\e[94m$PWD\e[0m" # Current Directory
         echo -e "\e[92mTime of Terminal Start\e[0m:" "["$CURRENT_TIME"]" # Time of start
         echo -e "\e[92mDefault Shell\e[0m:" $(echo $SHELL | cut -c 10-) # Default Shell
+	echo -e "\e[92mUptime\e[0m:" $(uptime --pretty | cut -c 4-)
         echo '____________________________________'
-        echo
-        echo -e "\e[92m<About system:>\e[0m" # System info
+        
+        echo -e "\n\e[92m<About system:>\e[0m" # System info
         echo "CPU" $( lscpu | grep "Model name" ) # CPU
         lsmem --summary # Memory info
         echo "Kernel:" $(uname --kernel-release) # Kernel info
-        echo '____________________________________'
-        echo
+        echo -e "____________________________________\n"
 }
 welcome
 
 # ART and Quotes #
 
-if [[ $RANDINT == 0 ]]; then #AOT
-	echo '============================='
-	echo '-------{心臓を捧げよ!}-------'
-	echo '---{Dedicate your hearts!}---'
-	echo '----{!Shinzō o Sasageyo!}----'
-	echo '============================='
-	echo '- From Attack On Titan (進撃の巨人)'
+function art() {
+	if [[ $RANDINT == 0 ]]; then #AOT
+		echo '============================='
+		echo '-------{心臓を捧げよ!}-------'
+		echo '---{Dedicate your hearts!}---'
+		echo '----{!Shinzō o Sasageyo!}----'
+		echo '============================='
+		echo '- From Attack On Titan (進撃の巨人)'
 
-elif [[ $RANDINT == 1 ]]; then #Outsiders 
-	echo '@=================================@'
-	echo '!------{STAY GOLDEN PONYBOY}------!'
-	echo '@=================================@'
-	echo '- Dallas, The Outsiders'
+	elif [[ $RANDINT == 1 ]]; then #Outsiders 
+		echo '@=================================@'
+		echo '!------{STAY GOLDEN PONYBOY}------!'
+		echo '@=================================@'
+		echo '- Dallas, The Outsiders'
 
-elif [[ $RANDINT == 2 ]]; then #Who gave you perms????
-	echo ' #***************************************# '
-	echo '===Who gave you permission to launch me?==='
-	echo ' #***************************************# '
+	elif [[ $RANDINT == 2 ]]; then #Who gave you perms????
+		echo ' #***************************************# '
+		echo '===Who gave you permission to launch me?==='
+		echo ' #***************************************# '
 
-elif [[ $RANDINT == 3 ]]; then #WHO 
-	echo ' #**************************# '
-	echo '===WHO IN THE FRICK ARE YOU?==='
-	echo ' #**************************# '
-	echo 
-	echo "(Oh, it's just you," $USER ")"
+	elif [[ $RANDINT == 3 ]]; then #WHO 
+		echo ' #**************************# '
+		echo '===WHO IN THE FRICK ARE YOU?==='
+		echo ' #**************************# '
+		echo
+		echo "(Oh, it's just you," $USER ")"
 
-elif [[ $RANDINT == 4 ]]; then #Forest Gump
-	echo ' #***********************************# '
-	echo '== Life is like a box of Chocalates. =='
-	echo ' #***********************************# '
-	echo '- Forrest Gump'
-elif [[ $RANDINT == 5 ]]; then #Mishima
-	echo ' #******************************************# '
-	echo '=== The instant that the blade tore open ====='
-	echo '=== his flesh, the bright disk of the sun ====' 
-	echo '== soared up and exploded behind his eyelids.='
-	echo ' #******************************************# '
-	echo ' - Runaway Horses, Yukio Mishima' 
+	elif [[ $RANDINT == 4 ]]; then #Forest Gump
+		echo ' #***********************************# '
+		echo '== Life is like a box of Chocalates. =='
+		echo ' #***********************************# '
+		echo '- Forrest Gump'
+	elif [[ $RANDINT == 5 ]]; then #Mishima
+		echo ' #******************************************# '
+		echo '=== The instant that the blade tore open ====='
+		echo '=== his flesh, the bright disk of the sun ====' 
+		echo '== soared up and exploded behind his eyelids.='
+		echo ' #******************************************# '
+		echo ' - Runaway Horses, Yukio Mishima' 
 
 
-elif [[ $RANDINT == 6 ]]; then #HACKING THE PENTAGON
-	echo '+++HACKING THE PENTAGON+++'
-	echo 'Progress: [#####################]'
-	echo 'Done! Giving' [ $USER ] 'root access now...'
-	echo 'TIME OF ACCESS: ' $CURRENT_TIME
+	elif [[ $RANDINT == 6 ]]; then #HACKING THE PENTAGON
+		echo '+++HACKING THE PENTAGON+++'
+		echo 'Progress: [#####################]'
+		echo 'Done! Giving' [ $USER ] 'root access now...'
+		echo 'TIME OF ACCESS: ' $CURRENT_TIME
 
-elif [[ $RANDINT == 7 ]]; then #Trollface	
-	echo '     ▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄        '
-	echo '     █░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄    '
-	echo '    █░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█   '
-	echo '   █░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█  '
-	echo ' ▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█ '
-	echo '█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█'
-	echo '█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█'
-	echo ' █░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█ '
-	echo '  █░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█  '
-	echo '   █░░░░██░░▀█▄▄▄█▄▄█▄████░█   '
-	echo '    █░░░░▀▀▄░█░░░█░█▀██████░█  '
-	echo '     ▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█  ' 
-	echo '       ▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█ '
-	echo '          ▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█ '
-	echo '              ▀▄▄▄▄▄░░░░░░░░█  ' 
-	echo '    Problem?        ▀▀▀▀▀▀▀▀   '
-	echo '    AsciiArt From: TwitchQuotes' 
+	elif [[ $RANDINT == 7 ]]; then #Trollface	
+		echo '     ▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄        '
+		echo '     █░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄    '
+		echo '    █░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█   '
+		echo '   █░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█  '
+		echo ' ▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█ '
+		echo '█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█'
+		echo '█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█'
+		echo ' █░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█ '
+		echo '  █░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█  '
+		echo '   █░░░░██░░▀█▄▄▄█▄▄█▄████░█   '
+		echo '    █░░░░▀▀▄░█░░░█░█▀██████░█  '
+		echo '     ▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█  ' 
+		echo '       ▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█ '
+		echo '          ▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█ '
+		echo '              ▀▄▄▄▄▄░░░░░░░░█  ' 
+		echo '    Problem?        ▀▀▀▀▀▀▀▀   '
+		echo '    AsciiArt From: TwitchQuotes' 
 
-elif [[ $RANDINT == 8 ]]; then
-	echo '   SMOKE DAT       (  )/     '
-	echo '    JUNGLEBOYZ      )(/      '
-	echo ' ________________  ( /)      '
-	echo '()__)____________)))))    hjw'
-	echo 'AsciiArt by: Hayley Jane Wakenshaw | Source Asciiart.eu'
+	elif [[ $RANDINT == 8 ]]; then
+		echo '   SMOKE DAT       (  )/     '
+		echo '    JUNGLEBOYZ      )(/      '
+		echo ' ________________  ( /)      '
+		echo '()__)____________)))))    hjw'
+		echo 'AsciiArt by: Hayley Jane Wakenshaw | Source Asciiart.eu'
 
-elif [[ $RANDINT == 9 ]]; then 
-	echo '              ...                             '
-	echo '             ;::::;                           ' 
-	echo '            ;::::; :;                         '
-	echo "         ;:::::'   :;                         "
-	echo "        ;:::::;     ;.                        "
-	echo "       ,:::::'       ;           OOO\         "  
-	echo "       ::::::;       ;          OOOOO\        "
-	echo "       ;:::::;       ;         OOOOOOOO       "
-	echo "      ,;::::::;     ;'         / OOOOOOO      "
-	echo '    ;:::::::::`. ,,,;.        /  / DOOOOOO    '
-	echo "  .';:::::::::::::::::;,     /  /     DOOOO   "
-	echo " ,::::::;::::::;;;;::::;,   /  /        DOOO  "
-	echo ';`::::::` ::::::;;;::::: ,#/  /          DOOO '
-	echo ':`:::::::`;::::::;;::: ;::#  /            DOOO'
-	echo '::`:::::::`;:::::::: ;::::# /              DOO'
-	echo '`:`:::::::`;:::::: ;::::::#/               DOO'
-	echo ' :::`:::::::`;; ;:::::::::##                OO'
-	echo ' ::::`:::::::`;::::::::;:::#                OO' 
-	echo ' `:::::`::::::::::::; `:;::#                O '
-	echo '  `:::::`::::::::;  /  / `:#                  ' 
-	echo '   ::::::`:::::;   /  /   `#                  '
-	echo 'Unknown Artist: Source: Asciiart.eu' 
+	elif [[ $RANDINT == 9 ]]; then 
+		echo '              ...                             '
+		echo '             ;::::;                           ' 
+		echo '            ;::::; :;                         '
+		echo "         ;:::::'   :;                         "
+		echo "        ;:::::;     ;.                        "
+		echo "       ,:::::'       ;           OOO\         "  
+		echo "       ::::::;       ;          OOOOO\        "
+		echo "       ;:::::;       ;         OOOOOOOO       "
+		echo "      ,;::::::;     ;'         / OOOOOOO      "
+		echo '    ;:::::::::`. ,,,;.        /  / DOOOOOO    '
+		echo "  .';:::::::::::::::::;,     /  /     DOOOO   "
+		echo " ,::::::;::::::;;;;::::;,   /  /        DOOO  "
+		echo ';`::::::` ::::::;;;::::: ,#/  /          DOOO '
+		echo ':`:::::::`;::::::;;::: ;::#  /            DOOO'
+		echo '::`:::::::`;:::::::: ;::::# /              DOO'
+		echo '`:`:::::::`;:::::: ;::::::#/               DOO'
+		echo ' :::`:::::::`;; ;:::::::::##                OO'
+		echo ' ::::`:::::::`;::::::::;:::#                OO' 
+		echo ' `:::::`::::::::::::; `:;::#                O '
+		echo '  `:::::`::::::::;  /  / `:#                  ' 
+		echo '   ::::::`:::::;   /  /   `#                  '
+		echo 'Unknown Artist: Source: Asciiart.eu' 
 
-elif [[ $RANDINT == 10 ]]; then
-	echo "TESTING TESTING? MIC CHECK: OK!"
-elif [[ $RANDINT == 11  ]]; then
-	echo "goodbye!"
-elif [[ $RANDINT == 12 ]]; then
-	echo "hi."
-elif [[ $RANDINT == 13 ]]; then
-	echo "The way she had my toes curl should be a crime"
-	echo "-Timberlake, Bones"
-elif [[ $RANDINT == 14 ]]; then
-	echo "VIM > NANO"
-elif [[ $RANDINT == 15 ]]; then
-	echo "LONG LIVE KING TERRY."
-	echo "TALK TO GOD AND INSTALL TempleOS today!"
-else
-	echo '|=====__-__=====|'
-	echo '|DanceDanceRate4|'
-	echo '[===============]'
-fi
+	elif [[ $RANDINT == 10 ]]; then
+		echo "TESTING TESTING? MIC CHECK: OK!"
+	elif [[ $RANDINT == 11  ]]; then
+		echo "goodbye!"
+	elif [[ $RANDINT == 12 ]]; then
+		echo "hi."
+	elif [[ $RANDINT == 13 ]]; then
+		echo "The way she had my toes curl should be a crime"
+		echo "-Timberlake, Bones"
+	elif [[ $RANDINT == 14 ]]; then
+		echo "VIM > NANO"
+	elif [[ $RANDINT == 15 ]]; then
+		echo "LONG LIVE KING TERRY."
+		echo "TALK TO GOD AND INSTALL TempleOS today!"
+	else
+		echo '|=====__-__=====|'
+		echo '|DanceDanceRate4|'
+		echo '[===============]'
+	fi
 
 # END OF ART #
-
-echo '____________________________________'
-echo 
+}
+art
+echo -e '____________________________________\n'
 
 # DEBUG MENU (uncomment to use)
 : '
@@ -173,4 +174,4 @@ echo "DEBUG MENU:"
 echo "========================"
 echo "RANGE: " $RANGE
 echo "RANDINT:" $RANDINT
-'
+echo '
