@@ -19,7 +19,7 @@ ____________________________________
 
 user@host $
 ```
-Acts as an alternative to NeoFetch/pFetch 
+Acts as a minimalist alternative to NeoFetch/pFetch 
 
 --------------------------------------------------------------------------------
 
