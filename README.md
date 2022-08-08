@@ -71,7 +71,7 @@ Notes:
 - Should work just fine on MacOS-- Since MAC's utilize the ZSH shell and is a UNIX-like OS, but I haven't tested it yet.
 - Same goes for any other Unix-Like System. If any issues sprout up, pls post in the Bug Reports. :P
 --------------------------------------------------------------------------------
-Calling Custom Quotes:
+## Calling Custom Quotes:
 if you would rather call a specific quote, you may use `shell-random-greeter [1,2,3....]` which will then show that specific art/quote when running the script 
 --------------------------------------------------------------------------------
 Enjoy the script!
