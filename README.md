@@ -73,6 +73,7 @@ Notes:
 --------------------------------------------------------------------------------
 ## Calling Custom Quotes:
 if you would rather call a specific quote, you may use `shell-random-greeter [1,2,3....]` which will then show that specific art/quote when running the script 
+
 --------------------------------------------------------------------------------
 Enjoy the script!
---------------------------------------------------------------------------------
+
