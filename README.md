@@ -50,7 +50,7 @@ Installing to any shell:
 
 --------------------------------------------------------------------------------
 
-# UPDATING SHELL-RANDOM-GREETER (After Adding in Custom Quotes)
+# Post-Customizing 'Shell-Random-Greeter' (For Manual Install only)
 After making any edits to `shell-random-greeter`, you can either run 
 1. `$ ./install` 
 2. `$ sudo cp shell-random-greeter /usr/bin`
