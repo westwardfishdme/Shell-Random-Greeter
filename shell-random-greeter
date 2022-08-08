@@ -22,9 +22,13 @@ ART SOURCES: https://www.asciiart.eu/
 
 
 # VARIABLES #
-
 RANGE=$(grep -c 'elif' /usr/bin/shell-random-greeter ) #counts the #of Else-If statements in file (number should always be one more than the final value in the elif statements)
-RANDINT=$(($RANDOM% $RANGE )) # picks a random number depending on the amount of elif statements in the file
+# CHOOSING A QUOTE #
+if [[ -n $1 ]];then
+	RANDINT=$1
+else
+	RANDINT=$(($RANDOM% $RANGE )) # picks a random number depending on the amount of elif statements in the file
+fi
 CURRENT_TIME=$( date '+%H:%M:%S') # Just the current time for the 'TIME of terminal start-- can be used in the quotes section as well.'
 ##############################################################################################################
 
