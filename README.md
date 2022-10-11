@@ -51,10 +51,8 @@ Installing to any shell:
 --------------------------------------------------------------------------------
 
 # Post-Customizing 'Shell-Random-Greeter' (For Manual Install only)
-After making any edits to `shell-random-greeter`, you can either run 
-1. `$ ./install` 
-2. `$ sudo cp shell-random-greeter /usr/bin`
-and the script should regenerate on the next launch :)
+!!! You can now edit `shell-random-greeter` without superuser priviledges!
+You may configure prompts from ~/.config/shellrandomgreeter/config
 
 --------------------------------------------------------------------------------
 
