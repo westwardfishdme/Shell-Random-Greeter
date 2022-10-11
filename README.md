@@ -65,9 +65,9 @@ Unix Shells:
 - TCSH
 --------------------------------------------------------------------------------
 Notes:
-- WinBash is sort of buggy, but I'll work it out
-- Should work just fine on MacOS-- Since MAC's utilize the ZSH shell and is a UNIX-like OS, but I haven't tested it yet.
-- Same goes for any other Unix-Like System. If any issues sprout up, pls post in the Bug Reports. :P
+- ~~WinBash is sort of buggy, but I'll work it out~~ Windows is depreciated.
+- Should work just fine on MacOS-- Since Mac's utilize the ZSH shell and is a UNIX-like OS, but I haven't tested it yet.
+- Same goes for any other Unix-Like System. If any issues sprout up, pls post in the Bug Reports. Or email me @westwardfishdme@gmail.com :P
 --------------------------------------------------------------------------------
 ## Calling Custom Quotes:
 if you would rather call a specific quote, you may use `shell-random-greeter [1,2,3....]` which will then show that specific art/quote when running the script 
