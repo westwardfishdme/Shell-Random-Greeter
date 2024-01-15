@@ -1,3 +1,10 @@
+UPDATE: THIS PROJECT IS NOW DEFUNCT
+I rewrote the entire project in C, and haven't updated
+this repository in a year now.
+go check out:
+https://github.com/merci-libre/scfetch
+
+
 # Shell Random Greeter
 A simple bash script that will generate a random ASCII art -OR- Quote when ran. Looks like this:
 
